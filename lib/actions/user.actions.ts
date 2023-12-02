@@ -20,11 +20,14 @@ export async function updateUser({
     image,
     path,
 }: Params): Promise<void> {
+    connectToDB;
     
     try {
-    connectToDB;
-await User.findOneAndUpdate(
-        { id: userId }, { username: username.toLocaleLowerCase(),
+   
+   await User.findOneAndUpdate(
+        { id: userId },
+        
+    { username: username.toLowerCase(),
         name,
         bio, 
         image, 
