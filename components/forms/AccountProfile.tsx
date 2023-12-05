@@ -34,10 +34,10 @@ interface Props {
 }
 
 
-const AccountProfile = ({user, btnTitle }: Props)  => {
+const AccountProfile =  ({user, btnTitle }: Props)  => {
 
       const [files, setFiles ] = useState<File[]>([])
-      const { startUpload } = useUploadThing("media")
+      const { startUpload } = useUploadThing("media");
       const router = useRouter();
       const pathname = usePathname();
 
@@ -51,9 +51,10 @@ const AccountProfile = ({user, btnTitle }: Props)  => {
         bio: user?.bio || "",
 
         }
-    })
+    });
 
-    const handleImage = (e: ChangeEvent<HTMLInputElement>, fieldChange: (value:string) => void) => {
+    const handleImage = (e: ChangeEvent<HTMLInputElement>,
+       fieldChange: (value:string) => void) => {
       e.preventDefault();
 
       const fileReader = new FileReader();
@@ -134,7 +135,6 @@ const AccountProfile = ({user, btnTitle }: Props)  => {
                     alt="profile_photo"
                     width={24}
                     height={24}
-              
                     className=" object-contain"
                      />
                   )}

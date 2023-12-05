@@ -14,10 +14,10 @@ async function Page() {
         name: userInfo?.name || user?.firstName ||
         "",
         bio: userInfo?.bio || "",
-        image: userInfo?.image || user.ImageUrl,
+        image: userInfo?.image || user.imageUrl,
 
     }
-
+ 
      
     return (
         <main className="mx-auto flex max-w-3xl flex-col justify-start px-10 py-20">

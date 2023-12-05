@@ -42,7 +42,6 @@ export async function updateUser({
     }
     
   } catch (error: any) {
-    console.error('Error during user update:', error);
     throw new Error(`Failed to create/update user: ${error.message}`);
   }
- }  
+ };
