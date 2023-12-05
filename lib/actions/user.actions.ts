@@ -1,7 +1,7 @@
 "use server"
 
 import { revalidatePath } from 'next/cache';
-import {connectToDB} from '../actions/mongoose'
+import {connectToDB} from '../mongoose'
 import User from '../models/user.model';
 
 interface Params {
@@ -20,18 +20,19 @@ export async function updateUser({
     image,
     path,
 }: Params): Promise<void> {
-    connectToDB;
+    connectToDB();
     
     try {
    
    await User.findOneAndUpdate(
         { id: userId },
         
-    { username: username.toLowerCase(),
+    { 
+        username: username.toLowerCase(),
         name,
         bio, 
         image, 
-        onboarded: true 
+        onboarded: true,
     },
     { upsert: true}
 
