@@ -393,10 +393,18 @@
     file-selector "^0.6.0"
     tailwind-merge "^1.13.2"
 
-"@uploadthing/shared@^6.0.2":
+"@uploadthing/shared@^6.0.0", "@uploadthing/shared@^6.0.2":
   version "6.0.2"
   resolved "https://registry.npmjs.org/@uploadthing/shared/-/shared-6.0.2.tgz"
   integrity sha512-yFOhvzBG8VB2qmEGWDuW/tV/ZcfRZ4a6rX7i9/ZS3IqHA0FO7CKa8yitltAl3yRdSI9it88iMEQg7Ah/ve8D4A==
+
+"@uploadthing/solid@^6.0.0":
+  version "6.0.0"
+  resolved "https://registry.npmjs.org/@uploadthing/solid/-/solid-6.0.0.tgz"
+  integrity sha512-KYtRuQw4byS3czwOtWjBIuD9fuXg15EP79ivtaXYOvJT1p1cV8nc+q26cfoPLK5WqSfduBwwNhsZDNSA6Z2g/Q==
+  dependencies:
+    "@uploadthing/shared" "^6.0.0"
+    tailwind-merge "^1.13.2"
 
 ansi-regex@^2.0.0:
   version "2.1.1"
@@ -701,7 +709,7 @@ cssesc@^3.0.0:
   resolved "https://registry.npmjs.org/cssesc/-/cssesc-3.0.0.tgz"
   integrity sha512-/Tb/JcjK111nNScGob5MNtsntNM1aCNUDipB/TkwZFhyDrrE47SOx/18wF2bbjgc3ZzCSKW1T5nt5EbFoAz/Vg==
 
-csstype@^3.0.2:
+csstype@^3.0.2, csstype@^3.1.0:
   version "3.1.2"
   resolved "https://registry.npmjs.org/csstype/-/csstype-3.1.2.tgz"
   integrity sha512-I7K1Uu0MBPzaFKg4nI5Q7Vs2t+3gWWW648spaF+Rg7pI9ds18Ugn+lvg4SHczUdKlHI5LWBXyqfS8+DufyBsgQ==
@@ -1623,6 +1631,11 @@ scheduler@^0.23.0:
   dependencies:
     loose-envify "^1.1.0"
 
+seroval@^0.15.1:
+  version "0.15.1"
+  resolved "https://registry.npmjs.org/seroval/-/seroval-0.15.1.tgz"
+  integrity sha512-OPVtf0qmeC7RW+ScVX+7aOS+xoIM7pWcZ0jOWg2aTZigCydgRB04adfteBRbecZnnrO1WuGQ+C3tLeBBzX2zSQ==
+
 sift@16.0.1:
   version "16.0.1"
   resolved "https://registry.npmjs.org/sift/-/sift-16.0.1.tgz"
@@ -1659,6 +1672,22 @@ sntp@1.x.x:
   integrity sha512-7bgVOAnPj3XjrKY577S+puCKGCRlUrcrEdsMeRXlg9Ghf5df/xNi6sONUa43WrHUd3TjJBF7O04jYoiY0FVa0A==
   dependencies:
     hoek "2.x.x"
+
+solid-js@^1.5.3:
+  version "1.8.7"
+  resolved "https://registry.npmjs.org/solid-js/-/solid-js-1.8.7.tgz"
+  integrity sha512-9dzrSVieh2zj3SnJ02II6xZkonR6c+j/91b7XZUNcC6xSaldlqjjGh98F1fk5cRJ8ZTkzqF5fPIWDxEOs6QZXA==
+  dependencies:
+    csstype "^3.1.0"
+    seroval "^0.15.1"
+
+solidjs-dropzone@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.npmjs.org/solidjs-dropzone/-/solidjs-dropzone-1.0.0.tgz"
+  integrity sha512-X6YEua6clo6Xp07M/LuBpPaFzQrwE7bwRHB7UQQnAHpw1micZ8EpCRs0Dd3fdSzEmyZoHXAdZohFJw4Wkk3gWg==
+  dependencies:
+    attr-accept "^2.2.2"
+    file-selector "^0.6.0"
 
 source-map-js@^1.0.2:
   version "1.0.2"
@@ -1893,10 +1922,10 @@ update-browserslist-db@^1.0.13:
     escalade "^3.1.1"
     picocolors "^1.0.0"
 
-uploadthing@^6.0.0, uploadthing@^6.0.3:
-  version "6.0.3"
-  resolved "https://registry.npmjs.org/uploadthing/-/uploadthing-6.0.3.tgz"
-  integrity sha512-KH+FWHUg9zsJT+pYcVOa3p6WiPBJ8Qdgv+HUArkW8C5wF6nnDFhBFIg6hEa499Q5mcO4UOY5hLeBGMJu/C+abQ==
+uploadthing@^6.0.0, uploadthing@^6.0.4:
+  version "6.0.4"
+  resolved "https://registry.npmjs.org/uploadthing/-/uploadthing-6.0.4.tgz"
+  integrity sha512-5zIKiL00ONywAmqtL4Ug1OAw/fpa6DGFRae/C8Bckuqmx0I949CghjCwvMKaIo+ZCD9qBeLwfNNucZNeTsHzJA==
   dependencies:
     "@uploadthing/mime-types" "^0.2.2"
     "@uploadthing/shared" "^6.0.2"

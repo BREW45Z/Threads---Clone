@@ -23,26 +23,22 @@ export async function updateUser({
     connectToDB();
     
     try {
-   
-   await User.findOneAndUpdate(
-        { id: userId },
-        
-    { 
-        username: username.toLowerCase(),
-        name,
-        bio, 
-        image, 
-        onboarded: true,
-    },
-    { upsert: true}
-
-    );
-
-    if(path === '/profile/edit'){
-        revalidatePath(path);
-    }
-    
-  } catch (error: any) {
-    throw new Error(`Failed to create/update user: ${error.message}`);
-  }
- };
+        await User.findOneAndUpdate(
+          { id: userId },
+          {
+            username: username.toLowerCase(),
+            name,
+            bio,
+            image,
+            onboarded: true,
+          },
+          { upsert: true }
+        );
+      
+        if (path === '/profile/edit') {
+          revalidatePath(path);
+        }
+      } catch (error: any) {
+        throw new Error(`Failed to create/update user: ${error.message}`);
+      }
+    }      
