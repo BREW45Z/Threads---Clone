@@ -1,11 +1,12 @@
 "use client"
+
 import { useForm } from "react-hook-form";
 import { Form,FormControl,FormField,FormItem, FormLabel,FormMessage } from "../ui/form";
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as  z from "zod";
 import { Button } from "../ui/button";
 import { Textarea } from "../ui/textarea";
-//import { updateUser } from "@/lib/actions/user.actions";
+// import { updateUser } from "@/lib/actions/user.actions";
 import { usePathname, useRouter } from "next/navigation";
 import { ThreadValidation } from "@/lib/validations/thread";
 import { createThread } from "@/lib/actions/thread.actions";
@@ -26,7 +27,7 @@ interface Props {
     
 
 
-function PostThreads({ userId}: {userId: string}) {
+function PostThread({ userId }: {userId: string}) {
     const router = useRouter();
     const pathname = usePathname();
 
@@ -34,7 +35,7 @@ function PostThreads({ userId}: {userId: string}) {
   const form = useForm({
       resolver:  zodResolver(ThreadValidation),
       defaultValues: { 
-        threads: '',
+        thread: '',
         accountId: userId,
       }
   })
@@ -46,7 +47,7 @@ function PostThreads({ userId}: {userId: string}) {
     author: userId,
     communityId: null,
     path: pathname
-  })
+  });
 
   router.push("/")
   }
@@ -60,7 +61,7 @@ function PostThreads({ userId}: {userId: string}) {
         >
             <FormField
             control={form.control}
-            name="threads"
+            name="thread"
             render={({ field }) => (
               <FormItem className="flex w-full flex-col gap-3">
                 <FormLabel className="text-base-semibold text-light-2">
@@ -93,4 +94,4 @@ function PostThreads({ userId}: {userId: string}) {
      
 }
 
-export default PostThreads;
+export default PostThread;
