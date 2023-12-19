@@ -44,7 +44,7 @@ export async function fetchPosts(pageNumber = 1, pageSize = 20) {
 
 
     // Fetch the posts that have no parents (top-level threads...)
-    const postsQuery = Thread.find({ parentId: {$: [null, undefined]}})
+    const postsQuery = Thread.find({ parentId: {$in: [null, undefined]}})
     .sort({ createdAt: 'desc'})
     .skip(skipAmount)
     .limit(pageSize)
