@@ -1,5 +1,8 @@
+
+
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 
 interface Props {
     id: string;
@@ -34,7 +37,68 @@ author,
 community,
 createdAt,
 comments,
+isComment,
 }: Props) => {
+
+   /* const [likes, setLikes] = useState(0);
+    const [isLiked, setIsLiked] = useState(false);
+    
+    const [reposts, setReposts] = useState(0);
+    const [isReposted, setIsReposted] = useState(false);
+
+    const handleLikeClick = async () => {
+        try {
+          // Simulate sending a request to the server
+          const response = await fetch(`/api/threads/${id}/like`, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              userId: currentUserId,
+            }),
+          });
+      
+          if (response.ok) {
+            // Update the UI based on the server's response
+            setIsLiked(!isLiked);
+            setLikes((prevLikes) => (isLiked ? prevLikes - 1 : prevLikes + 1));
+          } else {
+            console.error('Failed to like the thread');
+          }
+        } catch (error) {
+          console.error('Error while liking the thread:', error);
+        }
+      };
+      
+
+      const handleRepostClick = async () => {
+        try {
+          // Simulate sending a request to the server
+          const response = await fetch(`/api/threads/${id}/repost`, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              userId: currentUserId,
+            }),
+          });
+      
+          if (response.ok) {
+            // Update the UI based on the server's response
+            setIsReposted(!isReposted);
+            setReposts((prevReposts) => (isReposted ? prevReposts - 1 : prevReposts + 1));
+          } else {
+            console.error('Failed to repost the thread');
+          }
+        } catch (error) {
+          console.error('Error while reposting the thread:', error);
+        }
+      };
+      
+    */  
+
     return (
         <article className="flex w-full flex-col rounded-xl bg-dark-2 p-7">
         <div className="flex items-start justify-between">
@@ -69,9 +133,15 @@ comments,
                              <Image src="/assets/repost.svg" alt="heart" width={24}
                             height={24} className="cursor-pointer object-contain" />
                              <Image src="/assets/share.svg" alt="heart" width={24}
-                            height={24} className="cursor-pointer object-contain" />
-                            
+                            height={24} className="cursor-pointer object-contain" />    
                         </div>
+                          {isComment && comments.length > 0 && (
+                            <Link href={`/thread/${id}`}>
+                              <p className="mt-1 text-subtle-medium text-gray-1">
+                                {comments.length} replies
+                              </p>
+                            </Link>
+                          )}        
                     </div>
                 </div>
             </div>
